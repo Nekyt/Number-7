@@ -211,7 +211,7 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
             else {
                 legalLabel.setTextFill(Color.RED);
                 addButton.setDisable(true);
-                isLegal=false;
+                isLegal=false;k
             }
 
 
