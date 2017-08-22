@@ -4,6 +4,7 @@ package sample;
  * Created by Nykyta on 7/20/2017.
  */
 public class ParametersRow {
+    private int x;
     private int ID;
     private String formulaName;
     private  String parameter;
