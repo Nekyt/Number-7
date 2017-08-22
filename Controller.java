@@ -166,4 +166,21 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML void  showFastCalc(){
+        try {
+            Parent fastCalc = FXMLLoader.load(getClass().getResource("FastCalc.fxml"));
+            Stage fastCalcStage=new Stage();
+            fastCalcStage.setScene(new Scene(fastCalc,328,164));
+            fastCalcStage.setResizable(false);
+            fastCalcStage.show();
+
+
+        }
+        catch (IOException e){
+             e.printStackTrace();
+        }
+    }
+   @FXML void close(){
+        System.exit(0);
+    }
 }

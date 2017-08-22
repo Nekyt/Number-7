@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="603.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="603.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <ListView fx:id="formulaList" layoutX="2.0" layoutY="28.0" onMouseClicked="#itemSelected" prefHeight="360.0" prefWidth="191.0" />
         <MenuBar prefHeight="25.0" prefWidth="613.0">
@@ -21,7 +21,8 @@
                         <MenuItem mnemonicParsing="false" onAction="#displayAddFormulaForm" text="Add Formula" />
                         <MenuItem mnemonicParsing="false" onAction="#displayRemoveFormulaForm" text="Remove Formula" />
                         <MenuItem mnemonicParsing="false" onAction="#displayUnitsForm" text="Units" />
-                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#showFastCalc" text="Fast Calc" />
+                        <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
                     </items>
                 </Menu>
             </menus>
