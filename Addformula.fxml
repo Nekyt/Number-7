@@ -35,6 +35,6 @@
       <TextFlow fx:id="formulaPreview" layoutX="20.0" layoutY="131.0" prefHeight="25.0" prefWidth="414.0" textAlignment="CENTER" />
       <Label fx:id="legalLabel" layoutX="20.0" layoutY="165.0" prefHeight="25.0" prefWidth="414.0" />
       <ChoiceBox fx:id="outputUnitChoiceBox" layoutX="131.0" layoutY="95.0" prefHeight="25.0" prefWidth="301.0" />
-      <CheckBox layoutX="9.0" layoutY="472.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="139.0" text="Pssst. Bypass security" />
+      <CheckBox fx:id="bypassCheckBox" onAction="#checkIfLegal" layoutX="9.0" layoutY="472.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="139.0" text="Pssst. Bypass security" />
    </children>
 </Pane>

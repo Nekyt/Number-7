@@ -38,6 +38,7 @@ public class Addformulalogic implements Initializable {
 @FXML VBox vBox2;
 @FXML Button addButton;
 @FXML Pane addFormulaPane;
+@FXML CheckBox bypassCheckBox;
 private static final Pattern LITTLE_STAR=Pattern.compile("([\\d][A-Za-z])+|([A-Za-z][\\d])+|([\\d][\\(])+|([\\)][\\d])+|([\\)][A-Za-z])+");
 private static final Pattern LETTERS=Pattern.compile("[A-Za-z]+");
 ObservableList<Label> labels=FXCollections.observableArrayList();
@@ -158,7 +159,7 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
         }
         return  true;
     }
-    void checkIfLegal(){
+   public void checkIfLegal(){
 
         boolean onlyLettersInName=true;
         boolean noSameFormulaName=true;
@@ -201,7 +202,7 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
         }
 
 
-            if(atLeastOneParam&&onlyLettersInName&&noSameFormulaName&&isFormulaValid&&onlyOneSymbolAtOnce&&noNoData){
+            if((atLeastOneParam&&onlyLettersInName&&noSameFormulaName&&isFormulaValid&&onlyOneSymbolAtOnce&&noNoData)||bypassCheckBox.isSelected()==true){
 
                 isLegal=true;
                 legalLabel.setTextFill(Color.GREEN);
@@ -211,7 +212,7 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
             else {
                 legalLabel.setTextFill(Color.RED);
                 addButton.setDisable(true);
-                isLegal=false;k
+                isLegal=false;
             }
 
 
