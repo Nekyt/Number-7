@@ -31,6 +31,7 @@ public class FastCalcLogic {
             ee.printStackTrace();
             answerLabel.setText("Error");
         }
+
     }
 
 
