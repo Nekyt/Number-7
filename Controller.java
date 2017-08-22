@@ -74,11 +74,10 @@ public class Controller implements Initializable {
             preparedFormula.acceptParametersValues(parameterValues, userUnits);
             preparedFormula.solve();
             resultArea.appendText(preparedFormula.logging.toString());
-            System.out.println(preparedFormula.logging);
             preparedFormula = new PreparedFormula(formulaList.getSelectionModel().getSelectedItem());
         }
         else {
-            Dialogs.createDialog("Please enter only numbers in parameters textfields.\rThanks a lot!","error");
+            Dialogs.createDialog("Please enter only numbers in parameters textfields.\nThanks a lot!","error");
         }
     }
     void clearEverything(){

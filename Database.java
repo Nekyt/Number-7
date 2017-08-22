@@ -20,10 +20,8 @@ public class Database {
     static void connectDatabase(String connectionString) {
         try {
             c = DriverManager.getConnection(connectionString);
-            System.out.println("Connection successful");
-        } catch (SQLException e) {
+         } catch (SQLException e) {
             Dialogs.createDialog("Could not connect to database", "error");
-            System.out.println("Sql exception");
             e.printStackTrace();
             System.exit(1);
         }

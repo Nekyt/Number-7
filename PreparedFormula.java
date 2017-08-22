@@ -45,12 +45,10 @@ public class PreparedFormula {
                 expression.setVariable(preparedParameters.get(i).getParameter(),convertedParametersValues.get(i));
             }
             solvedExpression=expression.evaluate();
-            System.out.println("Formula"+solvedExpression);
             logging.append("Solution: "+solvedExpression+" in "+preparedFormula.getOutputUnit());
             logging.append(System.lineSeparator());
-            logging.append("-----------------------------------------------------");
+            logging.append("---------------------------------------------------------------");
             logging.append(System.lineSeparator());
-            System.out.println(logging);
         }
 
     void getFormulaParameters(FormulasRow formulasRow){

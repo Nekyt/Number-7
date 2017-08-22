@@ -39,7 +39,7 @@ public class Addformulalogic implements Initializable {
 @FXML Button addButton;
 @FXML Pane addFormulaPane;
 @FXML CheckBox bypassCheckBox;
-private static final Pattern LITTLE_STAR=Pattern.compile("([\\d][A-Za-z])+|([A-Za-z][\\d])+|([\\d][\\(])+|([\\)][\\d])+|([\\)][A-Za-z])+");
+private static final Pattern LITTLE_STAR=Pattern.compile("([\\d][A-Za-z])+|([A-Za-z][\\d])+");
 private static final Pattern LETTERS=Pattern.compile("[A-Za-z]+");
 ObservableList<Label> labels=FXCollections.observableArrayList();
 ObservableList<ChoiceBox<String>> unitChoiceBoxes =FXCollections.observableArrayList();
@@ -123,7 +123,7 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
         labels.clear();
         matcher=LETTERS.matcher(worked);
         while(matcher.find()){
-            if(!(worked.substring(matcher.start(), matcher.end()).matches("sin|cos|tan|sqrt"))) {
+            if(!(worked.substring(matcher.start(), matcher.end()).matches("abs|acos|asin|atan|cbrt|ceil|cosh|exp|floor|log|log10|log2|sinh|tanh|signum|sin|cos|tan|sqrt"))) {
                 parameters.add(worked.substring(matcher.start(), matcher.end()));
             }
         }
@@ -229,7 +229,6 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
     }
     boolean performNoSameFormulaCheck(){
         long amount= Database.formulaList.stream().filter(formula-> formula.getFormulaName().equals(formulaNameIN.getText())).count();
-        System.out.println("amount"+amount);
         if(amount==0){
             return  false;
         }

@@ -45,8 +45,6 @@ public class DeleteFormulaLogic implements Initializable {
     @FXML void deleteFormula(){
         if(!(formulaTableView.getSelectionModel().isEmpty())) {
             int index = IDColumn.getCellData(formulaTableView.getSelectionModel().getSelectedIndex());
-            System.out.println(index);
-            System.out.println(formulaNameColumn.getCellData(formulaTableView.getSelectionModel().getSelectedIndex()));
             formulaNameColumn.getCellData(formulaTableView.getSelectionModel().getSelectedIndex());
             Database.deleteFromDatabase("Formulas", "ID", index);
             Database.deleteFromDatabase("Parameters", "FormulaName", formulaNameColumn.getCellData(formulaTableView.getSelectionModel().getSelectedIndex()));

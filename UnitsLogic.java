@@ -72,8 +72,19 @@ public class UnitsLogic implements Initializable {
             }
         }
     }
+    boolean rangeConstraint(){
+        if(unitTextField.getText().equals(rangeTextField.getText())&& !relationTextField.equals("1.0")){
+            Dialogs.createDialog("If you declare a new range, the relation value should always be 1.0","error");
+            return false;
+        }
+        else if (relationTextField.equals("1.0")){
+            Dialogs.createDialog("If the relation value is 1.0, it should be a range","error");
+            return false;
+        }
+        else {return  true;}
+    }
     @FXML  void checkAndAdd(){
-        if(unitTextField.getText().matches("[A-Za-z]+")&&rangeTextField.getText().matches("[A-Za-z]+")&&relationTextField.getText().matches("([\\d])+\\.([\\d])+")){
+        if(rangeConstraint()&&unitTextField.getText().matches("[A-Za-z]+")&&rangeTextField.getText().matches("[A-Za-z]+")&&relationTextField.getText().matches("([\\d])+\\.([\\d])+")){
 
                Database.addUnit(unitTextField.getText(), rangeTextField.getText(), Double.parseDouble(relationTextField.getText()));
                unitTextField.clear();
