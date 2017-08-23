@@ -170,7 +170,7 @@ public class Controller implements Initializable {
         try {
             Parent fastCalc = FXMLLoader.load(getClass().getResource("FastCalc.fxml"));
             Stage fastCalcStage=new Stage();
-            fastCalcStage.setScene(new Scene(fastCalc,328,164));
+            fastCalcStage.setScene(new Scene(fastCalc));
             fastCalcStage.setResizable(false);
             fastCalcStage.show();
 
