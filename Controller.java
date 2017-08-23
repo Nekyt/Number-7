@@ -173,8 +173,6 @@ public class Controller implements Initializable {
             fastCalcStage.setScene(new Scene(fastCalc));
             fastCalcStage.setResizable(false);
             fastCalcStage.show();
-
-
         }
         catch (IOException e){
              e.printStackTrace();
