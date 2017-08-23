@@ -13,7 +13,6 @@ public class UnitsRow {
         this.unit=unit;
         this.range=range;
         this.relation=relation;
-        System.out.println("ID:"+ID+"unit"+unit+"range"+range+"relation"+relation);
     }
     public Integer getID(){return ID;}
     public String getUnit(){

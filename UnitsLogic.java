@@ -77,7 +77,7 @@ public class UnitsLogic implements Initializable {
             Dialogs.createDialog("If you declare a new range, the relation value should always be 1.0","error");
             return false;
         }
-        else if (relationTextField.equals("1.0")){
+        else if (relationTextField.equals("1.0")&&!(unitTextField.getText().equals(rangeTextField.getText()))){
             Dialogs.createDialog("If the relation value is 1.0, it should be a range","error");
             return false;
         }
@@ -96,8 +96,9 @@ public class UnitsLogic implements Initializable {
 
         }
         else {
-            Dialogs.createDialog("Please use only letters in the unit and range textFields. Also please use only decimal values in the Relation textField. For example 1.0 instead of 1","error");
-
+            if() {
+                Dialogs.createDialog("Please use only letters in the unit and range textFields. Also please use only decimal values in the Relation textField. For example 1.0 instead of 1", "error");
+            }
         }
 
 
