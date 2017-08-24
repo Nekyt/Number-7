@@ -55,7 +55,7 @@ public class UnitsLogic implements Initializable {
     boolean checkForRangesBDelete(){
         String unitInQuestion= Unit.getCellData(unitPreview.getSelectionModel().getSelectedIndex());
         String relationInQuestion=Relation.getCellData(unitPreview.getSelectionModel().getSelectedIndex()).toString();
-        if(relationInQuestion.equals("1.0")){
+        if(relationInQuestion.matches("(1\\.0)|(1)")){
             Long numberOfValuesOfRange=Database.unitsList.stream().filter(unit->unit.getRange().equals(unitInQuestion)).count();
             if(numberOfValuesOfRange>1){
                 Dialogs.createDialog("This is a range, please delete all associated units first","error");
@@ -98,11 +98,11 @@ public class UnitsLogic implements Initializable {
     }
 
     boolean rangeConstraint() {
-        if (unitTextField.getText().equals(rangeTextField.getText()) && !(relationTextField.getText().equals("1.0"))) {
-            Dialogs.createDialog("If you declare a new range, the relation value should always be 1.0", "error");
+        if (unitTextField.getText().equals(rangeTextField.getText()) && !(relationTextField.getText().matches("(1\\.0)|(1)"))) {
+            Dialogs.createDialog("If you declare a new range, the relation value should always be 1.0/1", "error");
             return false;
-        }  else if (relationTextField.getText().equals("1.0") && !(unitTextField.getText().equals(rangeTextField.getText()))) {
-            Dialogs.createDialog("If the relation value is 1.0, it should be a range", "error");
+        }  else if (relationTextField.getText().matches("(1\\.0)|(1)") && !(unitTextField.getText().equals(rangeTextField.getText()))) {
+            Dialogs.createDialog("If the relation value is 1.0/1, it should be a range", "error");
             return false;
         } else {
 
@@ -111,8 +111,8 @@ public class UnitsLogic implements Initializable {
     }
 
     boolean checkValuesInTextFields() {
-        if (!(unitTextField.getText().matches("[A-Za-z]+") && rangeTextField.getText().matches("[A-Za-z]+") && relationTextField.getText().matches("([\\d])+\\.([\\d])+"))) {
-            Dialogs.createDialog("Please use only letters in the unit and range textFields. Also please use only decimal values in the relation textField. For example 10.0 instead of 10", "error");
+        if (!(unitTextField.getText().matches("[A-Za-z]+") && rangeTextField.getText().matches("[A-Za-z]+") && relationTextField.getText().matches("((\\d)+\\.(\\d)+)|(\\d)+"))) {
+            Dialogs.createDialog("Please use only letters in the unit and range textFields. Also please use only decimal values in the relation textField", "error");
             return false;
         } else {
             return true;
@@ -127,10 +127,10 @@ public class UnitsLogic implements Initializable {
         else {return true;}
     }
     boolean checkForRangeExistance(){
-        if(Database.unitsRangeList.stream().filter(range->range.equals(rangeTextField.getText())).findFirst().isPresent()&&!relationTextField.getText().equals("1.0")){
+        if(Database.unitsRangeList.stream().filter(range->range.equals(rangeTextField.getText())).findFirst().isPresent()&&!relationTextField.getText().matches("(1\\.0)|(1)")){
             return true;
         }
-        else if(relationTextField.getText().equals("1.0")){
+        else if(relationTextField.getText().matches("(1\\.0)|(1)")){
             return true;
         }
         else {

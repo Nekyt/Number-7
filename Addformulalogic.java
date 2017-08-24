@@ -4,8 +4,12 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -13,12 +17,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import net.objecthunter.exp4j.ValidationResult;
 
 import javax.xml.crypto.Data;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -35,6 +41,7 @@ public class Addformulalogic implements Initializable {
 @FXML Label legalLabel;
 @FXML TextField formulaNameIN;
 @FXML VBox vBox1;
+@FXML Button addUnitButton;
 @FXML VBox vBox2;
 @FXML Button addButton;
 @FXML Pane addFormulaPane;
@@ -56,6 +63,8 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
         outputUnitChoiceBox.getItems().addAll(Database.unitsNamesForChoiceBoxList);
         outputUnitChoiceBox.getSelectionModel().select(0);
         legalLabel.setFont(Font.font("System",FontWeight.BOLD,16));
+        legalLabel.setText("Congratulations! Now write your formula");
+        legalLabel.setTextFill(Color.GREEN);
     }
     @FXML void writeFormulaToDatabase(){
         if(isLegal) {
@@ -202,7 +211,7 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
         }
 
 
-            if((atLeastOneParam&&onlyLettersInName&&noSameFormulaName&&isFormulaValid&&onlyOneSymbolAtOnce&&noNoData)||bypassCheckBox.isSelected()==true){
+            if((atLeastOneParam&&onlyLettersInName&&noSameFormulaName&&isFormulaValid&&onlyOneSymbolAtOnce&&noNoData)|| bypassCheckBox.isSelected()==true){
 
                 isLegal=true;
                 legalLabel.setTextFill(Color.GREEN);
@@ -284,13 +293,30 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
 
     }
     boolean performLetterCheckInFormulName(){
-        matcher= LETTERS.matcher(formulaNameIN.getText());
-        if(matcher.matches()){
+        if(formulaNameIN.getText().matches("([A-Za-z\\d\\ ])+")){
             return false;
         }
         else {return true;}
     }
+   @FXML void addUnit(){
+        try {
+            Stage superStage = new Stage();
+            Parent superParent = FXMLLoader.load(getClass().getResource("Units.fxml"));
+            superStage.setScene(new Scene(superParent));
+            superStage.initModality(Modality.WINDOW_MODAL);
+            superStage.initOwner((Stage) addUnitButton.getScene().getWindow() );
+            superStage.setResizable(false);
+            superStage.setTitle("Number 7 : Units");
+            superStage.sizeToScene();
+            superStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
+            superStage.showAndWait();
+            updateFormulaPreview();
 
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+   }
 
 
 

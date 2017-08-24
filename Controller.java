@@ -124,11 +124,11 @@ public class Controller implements Initializable {
             Stage deleteFormulaStage = new Stage();
             deleteFormulaStage.setTitle("Number 7 : Remove Formula");
             deleteFormulaStage.setResizable(false);
-            deleteFormulaStage.setScene(new Scene(deleteFormula, 424, 400));
+            deleteFormulaStage.setScene(new Scene(deleteFormula));
             deleteFormulaStage.initModality(Modality.WINDOW_MODAL);
             deleteFormulaStage.initOwner(Main.primaryStage);
             deleteFormulaStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
-
+            deleteFormulaStage.sizeToScene();
             deleteFormulaStage.showAndWait();
             refreshFormulalist();
         } catch (IOException e) {
@@ -142,11 +142,12 @@ public class Controller implements Initializable {
             Parent units = FXMLLoader.load(getClass().getResource("Units.fxml"));
             Stage unitsStage = new Stage();
             unitsStage.setTitle("Number 7 : Units");
-            unitsStage.setScene(new Scene(units, 426, 430));
+            unitsStage.setScene(new Scene(units));
             unitsStage.setResizable(false);
             unitsStage.initModality(Modality.WINDOW_MODAL);
             unitsStage.initOwner(Main.primaryStage);
-            unitsStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
+            unitsStage.sizeToScene();
+           unitsStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             unitsStage.showAndWait();
             refreshFormulalist();
         } catch (IOException e) {
@@ -159,11 +160,12 @@ public class Controller implements Initializable {
             Parent addFormula = FXMLLoader.load(getClass().getResource("Addformula.fxml"));
             Stage addFormulaStage = new Stage();
             addFormulaStage.setTitle("Number 7 : Add Formula");
-            addFormulaStage.setScene(new Scene(addFormula, 448, 479));
+            addFormulaStage.setScene(new Scene(addFormula));
             addFormulaStage.setResizable(false);
             addFormulaStage.initModality(Modality.WINDOW_MODAL);
             addFormulaStage.initOwner(Main.primaryStage);
-            addFormulaStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
+            addFormulaStage.sizeToScene();
+           addFormulaStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             addFormulaStage.showAndWait();
             refreshFormulalist();
         } catch (IOException e) {
@@ -177,6 +179,7 @@ public class Controller implements Initializable {
             fastCalcStage.setScene(new Scene(fastCalc));
             fastCalcStage.setResizable(false);
             fastCalcStage.setTitle("Number 7 : FastCalc");
+            fastCalcStage.sizeToScene();
             fastCalcStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             fastCalcStage.show();
         }

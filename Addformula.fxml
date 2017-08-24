@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane fx:id="addFormulaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Addformulalogic">
+<Pane fx:id="addFormulaPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Addformulalogic">
    <children>
       <Label layoutX="23.0" layoutY="30.0" text="Formula name">
          <font>
@@ -29,12 +29,17 @@
       </Label>
       <TextField fx:id="formulaNameIN" layoutX="134.0" layoutY="28.0" onKeyReleased="#updateFormulaName" prefHeight="25.0" prefWidth="301.0" />
       <TextField fx:id="formulaContentIN" layoutX="134.0" layoutY="62.0" onKeyReleased="#updateFormulaPreview" prefHeight="25.0" prefWidth="301.0" />
-      <VBox fx:id="vBox2" layoutX="88.0" layoutY="203.0" prefHeight="228.0" prefWidth="336.0" spacing="5.0" />
+      <VBox fx:id="vBox2" layoutX="88.0" layoutY="203.0" prefHeight="228.0" prefWidth="153.0" spacing="5.0" />
       <VBox fx:id="vBox1" layoutX="20.0" layoutY="203.0" prefHeight="228.0" prefWidth="58.0" spacing="8.0" />
       <Button fx:id="addButton" layoutX="6.0" layoutY="440.0" mnemonicParsing="false" onAction="#writeFormulaToDatabase" prefHeight="25.0" prefWidth="437.0" text="Add !" />
       <TextFlow fx:id="formulaPreview" layoutX="20.0" layoutY="131.0" prefHeight="25.0" prefWidth="414.0" textAlignment="CENTER" />
       <Label fx:id="legalLabel" layoutX="20.0" layoutY="165.0" prefHeight="25.0" prefWidth="414.0" />
       <ChoiceBox fx:id="outputUnitChoiceBox" layoutX="131.0" layoutY="95.0" prefHeight="25.0" prefWidth="301.0" />
       <CheckBox fx:id="bypassCheckBox" layoutX="9.0" layoutY="472.0" mnemonicParsing="false" onAction="#checkIfLegal" prefHeight="17.0" prefWidth="139.0" text="Pssst. Bypass security" />
+      <Button fx:id="addUnitButton" layoutX="257.0" layoutY="203.0" mnemonicParsing="false" onAction="#addUnit" prefHeight="220.0" prefWidth="168.0" text="Add unit">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

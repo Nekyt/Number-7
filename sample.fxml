@@ -11,10 +11,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="603.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <ListView fx:id="formulaList" layoutX="2.0" layoutY="28.0" onMouseClicked="#itemSelected" prefHeight="360.0" prefWidth="191.0" />
-        <MenuBar prefHeight="25.0" prefWidth="613.0">
+        <ListView fx:id="formulaList" layoutX="2.0" layoutY="26.0" onMouseClicked="#itemSelected" prefHeight="368.0" prefWidth="191.0" />
+        <MenuBar prefHeight="25.0" prefWidth="281.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -46,6 +46,10 @@
         <VBox fx:id="vBox1" layoutX="201.0" layoutY="60.0" prefHeight="202.0" prefWidth="70.0" spacing="5.0" />
         <VBox fx:id="vBox2" layoutX="273.0" layoutY="60.0" prefHeight="202.0" prefWidth="281.0" spacing="5.0" />
       <VBox fx:id="vBox3" layoutX="561.0" layoutY="60.0" prefHeight="202.0" prefWidth="41.0" spacing="5.0" />
+      <Button layoutX="281.0" mnemonicParsing="false" onAction="#displayAddFormulaForm" text="Add Formula" />
+      <Button layoutX="520.0" mnemonicParsing="false" onAction="#showFastCalc" prefHeight="25.0" prefWidth="84.0" text="FastCalc" />
+      <Button layoutX="365.0" mnemonicParsing="false" onAction="#displayRemoveFormulaForm" text="Remove Formula" />
+      <Button layoutX="470.0" mnemonicParsing="false" onAction="#displayUnitsForm" prefHeight="25.0" prefWidth="53.0" text="Units" />
 
     </children>
 </Pane>

@@ -5,11 +5,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-
-<Pane fx:controller="sample.DeleteFormulaLogic" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="424.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="387.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DeleteFormulaLogic">
    <children>
-      <Button fx:id="deleteButton" onAction="#deleteFormula" layoutX="5.0" layoutY="361.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="409.0" text="Delete" />
-      <TableView fx:id="formulaTableView" editable="true" layoutX="1.0" layoutY="9.0" prefHeight="343.0" prefWidth="415.0">
+      <Button fx:id="deleteButton" layoutX="5.0" layoutY="357.0" mnemonicParsing="false" onAction="#deleteFormula" prefHeight="25.0" prefWidth="415.0" text="Delete" />
+      <TableView fx:id="formulaTableView" editable="true" layoutX="5.0" layoutY="5.0" prefHeight="352.0" prefWidth="415.0">
         <columns>
           <TableColumn fx:id="IDColumn" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="formulaNameColumn" prefWidth="129.0" text="Formula  name" />

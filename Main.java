@@ -18,8 +18,9 @@ public class Main extends Application {
         this.primaryStage=primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Number 7");
-        primaryStage.setScene(new Scene(root, 603, 430));
+        primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
+        primaryStage.sizeToScene();
        // primaryStage.getIcons().add(new Image("file:number7logo.png"));
        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
         primaryStage.show();
