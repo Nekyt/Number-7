@@ -44,8 +44,8 @@
             </font>
         </Button>
         <VBox fx:id="vBox1" layoutX="201.0" layoutY="60.0" prefHeight="202.0" prefWidth="102.0" spacing="5.0" />
-        <VBox fx:id="vBox2" layoutX="307.0" layoutY="60.0" prefHeight="202.0" prefWidth="173.0" spacing="5.0" />
-      <VBox fx:id="vBox3" layoutX="482.0" layoutY="60.0" prefHeight="202.0" prefWidth="114.0" spacing="5.0" />
+        <VBox fx:id="vBox2" layoutX="307.0" layoutY="60.0" prefHeight="202.0" prefWidth="219.0" spacing="5.0" />
+      <VBox fx:id="vBox3" layoutX="530.0" layoutY="60.0" prefHeight="202.0" prefWidth="66.0" spacing="5.0" />
 
     </children>
 </Pane>

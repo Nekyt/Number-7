@@ -171,6 +171,7 @@ public class Controller implements Initializable {
             Stage fastCalcStage=new Stage();
             fastCalcStage.setScene(new Scene(fastCalc));
             fastCalcStage.setResizable(false);
+            fastCalcStage.setTitle("Number 7 : FastCalc");
             fastCalcStage.show();
         }
         catch (IOException e){
