@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -51,7 +52,20 @@ public class UnitsLogic implements Initializable {
     void refreshUnitPreview() {
         unitPreview.setItems(Database.unitsList);
     }
+    boolean checkForRangesBDelete(){
+        String unitInQuestion= Unit.getCellData(unitPreview.getSelectionModel().getSelectedIndex());
+        String relationInQuestion=Relation.getCellData(unitPreview.getSelectionModel().getSelectedIndex()).toString();
+        if(relationInQuestion.equals("1.0")){
+            Long numberOfValuesOfRange=Database.unitsList.stream().filter(unit->unit.getRange().equals(unitInQuestion)).count();
+            if(numberOfValuesOfRange>1){
+                Dialogs.createDialog("This is a range, please delete all associated units first","error");
+                return false;
+            }
+            return  true;
+        }
+        return  true;
 
+    }
     boolean checkForUnits() {
         if (Database.parametersList.stream().filter(parameter -> parameter.getUnit().equals(Unit.getCellData(unitPreview.getSelectionModel().getSelectedIndex()))).findFirst().isPresent()) {
             Dialogs.createDialog("Some formulas use those units, delete those first", "error");
@@ -72,7 +86,7 @@ public class UnitsLogic implements Initializable {
 
     @FXML
     void deleteUnit() {
-        if (checkForSelection() && checkForUnits()) {
+        if (checkForSelection() && checkForUnits()&&checkForRangesBDelete()) {
             int index = ID.getCellData(unitPreview.getSelectionModel().getSelectedIndex());
             Database.deleteFromDatabase("Units", "ID", index);
             Database.instantiateTables();

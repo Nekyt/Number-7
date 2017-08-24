@@ -38,7 +38,6 @@ public class Controller implements Initializable {
     ObservableList<Label>labels= FXCollections.observableArrayList();
     ObservableList<ChoiceBox<String >> choiceBoxes=FXCollections.observableArrayList();
     ObservableList<TextField> textFields=FXCollections.observableArrayList();
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         refreshFormulalist();
