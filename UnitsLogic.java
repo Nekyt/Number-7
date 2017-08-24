@@ -119,11 +119,29 @@ public class UnitsLogic implements Initializable {
         }
 
     }
+    boolean checkForUnitExistance(){
+        if(Database.unitsList.stream().filter(unit->unit.getUnit().equals(unitTextField.getText())).findFirst().isPresent()){
+            Dialogs.createDialog("This unit already exists","error");
+            return false;
+        }
+        else {return true;}
+    }
+    boolean checkForRangeExistance(){
+        if(Database.unitsRangeList.stream().filter(range->range.equals(rangeTextField.getText())).findFirst().isPresent()&&!relationTextField.getText().equals("1.0")){
+            return true;
+        }
+        else if(relationTextField.getText().equals("1.0")){
+            return true;
+        }
+        else {
+            Dialogs.createDialog("Please create a range before adding a unit","error");
+            return false;
+        }
+    }
 
     @FXML
     void checkAndAdd() {
-        if (checkValuesInTextFields() && rangeConstraint()) {
-
+        if (checkValuesInTextFields() && rangeConstraint()&&checkForRangeExistance()&&checkForUnitExistance()) {
             Database.addUnit(unitTextField.getText(), rangeTextField.getText(), Double.parseDouble(relationTextField.getText()));
             unitTextField.clear();
             rangeTextField.clear();
@@ -131,7 +149,6 @@ public class UnitsLogic implements Initializable {
             Database.instantiateTables();
             refreshUnitPreview();
             deleteUnitButton.setDisable(false);
-
         }
     }
 }

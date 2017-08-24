@@ -14,16 +14,14 @@ public class Main extends Application {
     static Stage primaryStage;
     @Override
     public void start(Stage primaryStage) throws Exception{
-
         Startup.startup();
         this.primaryStage=primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Number 7");
         primaryStage.setScene(new Scene(root, 603, 430));
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(new Image("number7logo.png"));
+        primaryStage.getIcons().add(new Image("file:number7logo.png"));
         primaryStage.show();
-
     }
 
 
@@ -33,5 +31,4 @@ public class Main extends Application {
 
 
 }
-
 

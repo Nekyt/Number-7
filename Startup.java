@@ -32,6 +32,8 @@ public class Startup {
                 preparedParameters.execute();
                 PreparedStatement preparedUnits=Database.c.prepareStatement("CREATE TABLE Units (ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Unit TEXT NOT NULL,Range TEXT NOT NULL,Relation REAL NOT NULL)");
                 preparedUnits.execute();
+                ///////
+                Database.addUnit("UA","UA",1.0);
 
             }
             catch(SQLException e){
