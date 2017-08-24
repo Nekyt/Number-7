@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -76,7 +77,7 @@ public class Controller implements Initializable {
             preparedFormula = new PreparedFormula(formulaList.getSelectionModel().getSelectedItem());
         }
         else {
-            Dialogs.createDialog("Please enter only numbers in parameters textfields.\nThanks a lot!","error");
+            Dialogs.createDialog("Please enter only numbers in parameters textFields.\nThanks a lot!","error");
         }
     }
     void clearEverything(){
@@ -126,6 +127,8 @@ public class Controller implements Initializable {
             deleteFormulaStage.setScene(new Scene(deleteFormula, 424, 400));
             deleteFormulaStage.initModality(Modality.WINDOW_MODAL);
             deleteFormulaStage.initOwner(Main.primaryStage);
+            deleteFormulaStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
+
             deleteFormulaStage.showAndWait();
             refreshFormulalist();
         } catch (IOException e) {
@@ -143,6 +146,7 @@ public class Controller implements Initializable {
             unitsStage.setResizable(false);
             unitsStage.initModality(Modality.WINDOW_MODAL);
             unitsStage.initOwner(Main.primaryStage);
+            unitsStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             unitsStage.showAndWait();
             refreshFormulalist();
         } catch (IOException e) {
@@ -159,6 +163,7 @@ public class Controller implements Initializable {
             addFormulaStage.setResizable(false);
             addFormulaStage.initModality(Modality.WINDOW_MODAL);
             addFormulaStage.initOwner(Main.primaryStage);
+            addFormulaStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             addFormulaStage.showAndWait();
             refreshFormulalist();
         } catch (IOException e) {
@@ -172,6 +177,7 @@ public class Controller implements Initializable {
             fastCalcStage.setScene(new Scene(fastCalc));
             fastCalcStage.setResizable(false);
             fastCalcStage.setTitle("Number 7 : FastCalc");
+            fastCalcStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             fastCalcStage.show();
         }
         catch (IOException e){

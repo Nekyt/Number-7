@@ -20,7 +20,8 @@ public class Main extends Application {
         primaryStage.setTitle("Number 7");
         primaryStage.setScene(new Scene(root, 603, 430));
         primaryStage.setResizable(false);
-        primaryStage.getIcons().add(new Image("file:number7logo.png"));
+       // primaryStage.getIcons().add(new Image("file:number7logo.png"));
+       primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
         primaryStage.show();
     }
 
