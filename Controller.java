@@ -55,7 +55,7 @@ public class Controller implements Initializable {
     boolean checkIfLegal(){
         boolean isLegal=true;
          for(int i=0;i<textFields.size();i++){
-             if(textFields.get(i).getText().matches("(\\d)+|((\\d)+\\.(\\d)+)")){
+             if(textFields.get(i).getText().matches("(-?(\\d)+)|(-?(\\d)+\\.(\\d)+)")){
                  ;
              }
              else {
