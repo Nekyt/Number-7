@@ -45,6 +45,7 @@ public class Addformulalogic implements Initializable {
 @FXML VBox vBox2;
 @FXML Button addButton;
 @FXML Pane addFormulaPane;
+@FXML CheckBox littleStarCheckBox;
 @FXML CheckBox bypassCheckBox;
 private static final Pattern LITTLE_STAR=Pattern.compile("([\\d][A-Za-z])+|([A-Za-z][\\d])+");
 private static final Pattern LETTERS=Pattern.compile("[A-Za-z]+");
@@ -55,7 +56,7 @@ ArrayList<Text> formulaPreviewArray=new ArrayList();
 private boolean isLegal=false;
 StringBuilder worked;
 Matcher matcher;
-Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^])+([\\dA-Za-z\\(\\)])+");
+Pattern oneSymbolAtOnce=Pattern.compile("(-?[\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^])+([\\dA-Za-z\\(\\)])+");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -65,6 +66,8 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
         legalLabel.setFont(Font.font("System",FontWeight.BOLD,16));
         legalLabel.setText("Congratulations! Now write your formula");
         legalLabel.setTextFill(Color.GREEN);
+        littleStarCheckBox.setSelected(true);
+
     }
     @FXML void writeFormulaToDatabase(){
         if(isLegal) {
@@ -88,15 +91,17 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
        checkIfLegal();
     }
     @FXML void updateFormulaPreview() {
-        //Adds *
-        worked=new StringBuilder(formulaContentIN.getText());
-        matcher=LITTLE_STAR.matcher(worked.toString());
-        while(matcher.find()){
+        worked = new StringBuilder(formulaContentIN.getText());
+
+        if(!littleStarCheckBox.isSelected()) {
+            //Adds *
+            matcher = LITTLE_STAR.matcher(worked.toString());
+            while (matcher.find()) {
 
                 worked.insert(matcher.start() + 1, '*');
-            matcher=LITTLE_STAR.matcher(worked.toString());
+                matcher = LITTLE_STAR.matcher(worked.toString());
+            }
         }
-
         //Filters texts
         formulaPreviewArray.clear();
         for(int i=0;i<worked.length();i++){
@@ -211,13 +216,20 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
         }
 
 
-            if((atLeastOneParam&&onlyLettersInName&&noSameFormulaName&&isFormulaValid&&onlyOneSymbolAtOnce&&noNoData)|| bypassCheckBox.isSelected()==true){
 
-                isLegal=true;
-                legalLabel.setTextFill(Color.GREEN);
-                legalLabel.setText("Congratulations, you are in law !");
+            if((atLeastOneParam&&onlyLettersInName&&noSameFormulaName&&isFormulaValid&&noNoData)|| bypassCheckBox.isSelected()==true){
+                isLegal = true;
                 addButton.setDisable(false);
+                if(onlyOneSymbolAtOnce) {
+                 legalLabel.setTextFill(Color.GREEN);
+                 legalLabel.setText("Congratulations, you are in law !");
+             }
+             else {
+                 legalLabel.setTextFill(Color.ORANGE);
+                 legalLabel.setText("Looks fishy but OK");
+             }
             }
+
             else {
                 legalLabel.setTextFill(Color.RED);
                 addButton.setDisable(true);
@@ -311,7 +323,9 @@ Pattern oneSymbolAtOnce=Pattern.compile("([\\dA-Za-z\\(\\)]+[\\*\\-\\/\\+\\.\\^]
             superStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             superStage.showAndWait();
             updateFormulaPreview();
-
+            outputUnitChoiceBox.getItems().clear();
+            outputUnitChoiceBox.getItems().addAll(Database.unitsNamesForChoiceBoxList);
+            outputUnitChoiceBox.getSelectionModel().select(0);
         }
         catch (IOException e){
             e.printStackTrace();

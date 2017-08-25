@@ -41,5 +41,6 @@
             <Font size="19.0" />
          </font>
       </Button>
+      <CheckBox onAction="#updateFormulaPreview" fx:id="littleStarCheckBox" layoutX="148.0" layoutY="472.0" mnemonicParsing="false" text="Disable little star" />
    </children>
 </Pane>
