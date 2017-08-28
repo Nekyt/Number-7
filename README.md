@@ -2,10 +2,10 @@
 Number 7 is a small program written on java which can help you a lot when you are working with formulas. It is completely open source.
 #### What does it do ?
 It substitutes values in formulas, also it can automatically convert input parameters from a unit to another. So you don't even have to convert them. 
-#### Usages
+### Usages
 * Homework
 * Not only homework
-#### How to use : 3 simple steps
+### How to use : 3 simple steps
 **First : Add a unit**
 Click on the Units button and then add a unit
 Tip:
@@ -47,9 +47,10 @@ The powers work like this 8^2
 **Third : Enjoy!**
 The rest is pretty straightforward
 #### Any help with development is apreciated just fork my repository
-email me at nykyta.kudrya@gmail.com. No spam please.
+Email me at nykyta.kudrya@gmail.com. No spam please.
 
 # Downloads
+
 
 
 
