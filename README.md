@@ -9,14 +9,16 @@ It substitutes values in formulas, also it can automatically convert input param
 ### How to use : 3 simple steps
 
 **First : Add a unit**
+
 Click on the Units button and then add a unit
+
 Tip:
 
 Unit|Range/S.I.|Relation
 ----------------|--------------|------------
 Name of the unit|e.g. The range for kM is M. For dL is L.|For cM the relation is 100. For dL R. is 0.1.
 
-The relation for a new Range/S.I. is alwasy 1. To get the relation for another value you just have to convert the Range/S.I. value into what you want. For example 1 M is 100 cm. And 1 M is 0.001 kM.
+The relation for a new Range/S.I. is always 1. To get the relation for another value you just have to convert the Range/S.I. value into what you want. For example 1 M is 100 cm. And 1 M is 0.001 kM.
 
 **Second : Add a formula**
 
@@ -47,7 +49,9 @@ Also it supports the scientific notation. e.g. 1.0e-32.
 The powers work like this 8^2
 
 **Third : Enjoy!**
+
 The rest is pretty straightforward
+
 #### Any help with development is apreciated just fork my repository
 Email me at nykyta.kudrya@gmail.com. No spam please.
 
