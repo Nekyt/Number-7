@@ -1,39 +1,44 @@
-## Welcome to GitHub Pages
+# Home of Number 7
+Number 7 is a small program written on java which can help you a lot when you are working with formulas. It is completely open source.
+#### What does it do ?
+It substitutes values in formulas, also it can automatically convert input parameters from a unit to another. So you don't even have to convert them. 
+#### Usages
+*Homework
+*Not only homework
+#### How to use : 3 simple steps
+**First : Add a unit**
+Click on the Units button and then add a unit
+Tip:
 
-You can use the [editor on GitHub](https://github.com/Nekyt/Number-7/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Unit|Range/S.I.|Relation
+----------------|--------------|------------
+Name of the unit|e.g. The range for kM is M. For dL is L.|For cM the relation is 100. For dL R. is 0.1.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The relation for a new Range/S.I. is alwasy 1. To get the relation for another value you just have to convert the Range/S.I. value into what you want. For example 1 M is 100 cm. And 1 M is 0.001 kM.
+**Second : Add a formula**
+This is pretty straightforward, just add your formula. 
+The name should only include letters, numbers and spaces.
+The formula should be supported by exp4j.
+List of all supported words:
+*abs: absolute value
+*acos: arc cosine
+*asin: arc sine
+*atan: arc tangent
+*cbrt: cubic root
+*ceil: nearest upper integer
+*cos: cosine
+*cosh: hyperbolic cosine
+*exp: euler's number raised to the power (e^x)
+*floor: nearest lower integer
+*log: logarithmus naturalis (base e)
+*log10: logarithm (base 10)
+log2: logarithm (base 2)
+*sin: sine
+*sinh: hyperbolic sine
+*sqrt: square root
+*tan: tangent
+*tanh: hyperbolic tangent
+*signum: signum function
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-<a href="UnitsLogic.java">Download File</a>
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Nekyt/Number-7/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
