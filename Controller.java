@@ -42,7 +42,9 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         refreshFormulalist();
+        checkForFormulaExistance();
     }
+
 
     void refreshFormulalist() {
         formulaList.getItems().clear();
@@ -131,6 +133,7 @@ public class Controller implements Initializable {
             deleteFormulaStage.sizeToScene();
             deleteFormulaStage.showAndWait();
             refreshFormulalist();
+            checkForFormulaExistance();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -168,6 +171,7 @@ public class Controller implements Initializable {
            addFormulaStage.getIcons().add(new Image(getClass().getResourceAsStream("/number7logo.png")));
             addFormulaStage.showAndWait();
             refreshFormulalist();
+            checkForFormulaExistance();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -189,5 +193,13 @@ public class Controller implements Initializable {
     }
    @FXML void close(){
         System.exit(0);
+    }
+    void checkForFormulaExistance(){
+       if(Database.formulaList.get(0).getFormula().equals("(No Data)")){
+           calculateButton.setDisable(true);
+       }
+       else {
+           calculateButton.setDisable(false);
+       }
     }
 }
