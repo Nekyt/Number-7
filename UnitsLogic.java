@@ -68,7 +68,7 @@ public class UnitsLogic implements Initializable {
     }
     boolean checkForUnits() {
         if (Database.parametersList.stream().filter(parameter -> parameter.getUnit().equals(Unit.getCellData(unitPreview.getSelectionModel().getSelectedIndex()))).findFirst().isPresent()) {
-            Dialogs.createDialog("Some formulas use those units, delete those first", "error");
+            Dialogs.createDialog("Some formulas use those units, delete those first please", "error");
             return false;
         } else {
             return true;
