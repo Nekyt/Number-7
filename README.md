@@ -5,7 +5,9 @@ It substitutes values in formulas, also it can automatically convert input param
 ### Usages
 * Homework
 * Not only homework
+
 ### How to use : 3 simple steps
+
 **First : Add a unit**
 Click on the Units button and then add a unit
 Tip:
