@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane fx:controller="sample.FastCalcLogic" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="328.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FastCalcLogic">
    <children>
-      <TextField onAction="#calculate" fx:id="expressionField" layoutX="15.0" layoutY="22.0" prefHeight="25.0" prefWidth="298.0" promptText="Enter expression here" />
+      <TextField fx:id="expressionField" layoutX="15.0" layoutY="22.0" onAction="#calculate" prefHeight="25.0" prefWidth="298.0" promptText="Enter expression here" />
       <Label fx:id="answerLabel" layoutX="11.0" layoutY="82.0" prefHeight="39.0" prefWidth="307.0" textAlignment="CENTER">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Button onAction="#close" layoutX="273.0" layoutY="125.0" mnemonicParsing="false" text="Close" />
+      <Button layoutX="273.0" layoutY="125.0" mnemonicParsing="false" onAction="#close" text="Close" />
+      <Button layoutX="202.0" layoutY="125.0" mnemonicParsing="false" onAction="#calculate" text="Calculate" />
    </children>
 </Pane>

@@ -99,10 +99,10 @@ public class UnitsLogic implements Initializable {
 
     boolean rangeConstraint() {
         if (unitTextField.getText().equals(rangeTextField.getText()) && !(relationTextField.getText().matches("(1\\.0)|(1)"))) {
-            Dialogs.createDialog("If you declare a new range, the relation value should always be 1.0/1", "error");
+            Dialogs.createDialog("If you declare a new range, the relation value should always be 1.0 or 1", "error");
             return false;
         }  else if (relationTextField.getText().matches("(1\\.0)|(1)") && !(unitTextField.getText().equals(rangeTextField.getText()))) {
-            Dialogs.createDialog("If the relation value is 1.0/1, it should be a range", "error");
+            Dialogs.createDialog("If the relation value is 1.0 or 1, it should be a range", "error");
             return false;
         } else {
 
