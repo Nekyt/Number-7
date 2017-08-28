@@ -56,7 +56,7 @@ The rest is pretty straightforward
 Email me at nykyta.kudrya@gmail.com. No spam please.
 
 # Downloads
-
+[Link to releases](https://github.com/Nekyt/Number-7/releases)
 
 
 
