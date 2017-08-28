@@ -12,7 +12,7 @@
         <columns>
           <TableColumn fx:id="ID" prefWidth="66.0" text="ID" />
           <TableColumn fx:id="Unit" editable="false" prefWidth="99.0" text="Unit" />
-            <TableColumn fx:id="Range" prefWidth="113.0" text="Range" />
+            <TableColumn fx:id="Range" prefWidth="113.0" text="S.I." />
             <TableColumn fx:id="Relation" prefWidth="139.0" text="Relation" />
         </columns>
       </TableView>
